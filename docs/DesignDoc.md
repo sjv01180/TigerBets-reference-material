@@ -17,8 +17,11 @@
 
 ## Executive Summary
 
-This is a summary of the project.
+TigerBets is an online betting platform designed to provide users with an interactive experience in predicting outcomes across various college sporting events. Our MVP will offer a range of features to cater to both administrators and users, ensuring smooth operation and engaging gameplay. In addition, the platform will provide basic user analytics, a system-wide leaderboard, and persistant data storage to ensure a robust user experience and a friendly competitive environment.
 
+The system will be designed using a layered software architecture. This design emphasizes separation of concerns that will make our software more maintainable and scalable to new requirements. Beyond these non-functional-requirements, TigerBets will be accessed by end users and maintained by system administrators. End users will be able to view events, place bets, and manage their profile. Admins will be capable of managing user accounts and sport events within the system. Both of these users will be capable of logging into the system and viewing the system-wide leaderboard.
+
+_Disclaimer: TigerBets operates solely with a friendly point system and does not involve real money transactions. The platform is intended for entertainment purposes only._
 
 ## Requirements
 
