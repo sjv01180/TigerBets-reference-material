@@ -7,12 +7,13 @@
 > and appear in the generated PDF in italics._
 
 ## Team Information
-* Team name: TEAMNAME
+* Team name: TigerBets
 * Team members
-  * MEMBER1
-  * MEMBER2
-  * MEMBER3
-  * MEMBER4
+  - Chen, Weijie, wxc2710
+  - Liu, Xu, xl8302
+  - Velasquez, Samuel, sjv5866
+  - Vellaisamy Senthilkumar, Rohini, rv8542
+
 
 ## Executive Summary
 
@@ -24,10 +25,21 @@ This is a summary of the project.
 This section describes the features of the application.
 
 ### Definition of MVP
-> _Provide a simple description of the Minimum Viable Product._
+
+Our MVP is a platform designed for betting on events, featuring role-based access and authorization for users. Administrators have control over event management and user accounts, while users can create profiles, navigate events, and place bets. The platform supports point betting and provides basic user analytics, with a leaderboard showcasing top performers. Data is securely stored for persistence, ensuring a smooth user experience.
 
 ### MVP Features
->  _Provide a list of top-level Epics and/or Stories of the MVP._
+
+- **Role-based Access and Authorization**: Users are granted access and permissions based on their designated roles, ensuring appropriate levels of control within the platform.
+Event Management by Admin: Administrators have the capability to create, update, and delete events, maintaining control over the platform's betting opportunities.
+- **High-level Account Management**: Administrators are equipped to oversee and manage user accounts at a strategic level, ensuring smooth operation of the platform.
+- **User Profile Management**: Users have the ability to create and manage their profiles, customizing their experience within the platform.
+- **Event Listing**: Users can easily navigate and find events through filtering and search functionalities, streamlining their experience.
+- **Point Betting Capabilities**: Users are empowered to place bets by adding or removing points from a target event, engaging actively in the betting process.
+- **Points Management**: Following the conclusion of an event, the platform handles point distribution and adjustment in accordance with the outcomes.
+- **Simple User Analytics**: The platform maintains a detailed history of point transactions, win-loss rates, and engagement of activities among all user accounts. These analytics will be displayed for each individual user with visual representations to ensure transparency and accountability among active users.
+- **Leaderboard for Top Point Holders**: A leaderboard showcases users with the highest accumulated points, fostering competition and engagement within the community.
+- **Persistent Data Storage in Database**: Data persistence is ensured through secure storage in a database, safeguarding information and enabling seamless user experiences.
 
 
 ## Architecture and Design
