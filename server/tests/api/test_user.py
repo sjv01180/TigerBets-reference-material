@@ -1,8 +1,6 @@
-import unittest
 import json
-
-from test_utils import *
-
+import unittest
+from tests.test_utils import *
 
 class TestUser(unittest.TestCase):
     def clear_data(self):

@@ -7,6 +7,7 @@ from db.tiger_bets.bets import rebuild_bet_tables
 class Init(Resource):
     def post(self):
         rebuild_event_tables()
+        rebuild_bet_tables()
         return {0: "Success"}, 200
 
 class Version(Resource):
