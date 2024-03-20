@@ -1,5 +1,5 @@
 host: localhost
 database: swen732
 user: swen732
-password: <replace-me>
+password: swen732
 port: 5432
