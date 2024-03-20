@@ -14,7 +14,7 @@ api.add_resource(Init, "/manage/init")
 api.add_resource(Version, "/manage/version")
 
 # User APIs
-api.add_resource(Users, "/users")
+api.add_resource(Users, '/users/<string:action>')
 
 # Bet APIs
 api.add_resource(Bets, "/bets")
