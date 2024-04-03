@@ -1,4 +1,4 @@
-# Project Name
+# Tiger Bets
 
 [![codecov](https://codecov.io/gh/SWEN-732-G3/TigerBets/graph/badge.svg?token=MGD5UEG2OE)](https://codecov.io/gh/SWEN-732-G3/TigerBets) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
