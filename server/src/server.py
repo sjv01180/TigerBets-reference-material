@@ -5,6 +5,7 @@ from api.management import *
 from api.users import *
 from api.events import *
 from api.bets import *
+from api.points import *
 
 app = Flask(__name__)
 CORS(app)
@@ -25,6 +26,11 @@ api.add_resource(SingleEvent, '/events/<string:event_id>')
 # Bet APIs
 api.add_resource(Bets, "/bets")
 api.add_resource(Bet, "/bets/<string:bet_id>")
+
+# Points APIs
+api.add_resource(Points, "/points")
+api.add_resource(Point, "/points/<string:user_id>")
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

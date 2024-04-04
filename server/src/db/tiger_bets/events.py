@@ -12,6 +12,7 @@ class Event:
 
 def rebuild_event_tables():
     exec_sql_file("src/db/sql/events.sql")
+    exec_sql_file("data/populate_event.sql")
 
 def create_event(event_name, team_a_id, team_b_id):
     """
