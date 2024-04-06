@@ -17,6 +17,7 @@ api.add_resource(Init, "/manage/init")
 api.add_resource(Version, "/manage/version")
 
 # User APIs
+api.add_resource(Admin, '/users/admin/<string:action>')
 api.add_resource(Users, '/users/<string:action>')
 
 # Event APIs

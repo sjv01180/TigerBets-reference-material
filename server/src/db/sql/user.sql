@@ -12,11 +12,16 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- Drop table if it already exists
 DROP TABLE IF EXISTS Users CASCADE;
 
+SELECT uuid_generate_v4();
+
+-- Create table
 CREATE TABLE Users (
     user_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_name VARCHAR(100) UNIQUE NOT NULL,
-    full_name VARCHAR(500),
-    email VARCHAR(100) UNIQUE NOT NULL,
+    user_name varchar(100),
+    full_name varchar(500),
+    email varchar(100),
+    password char(128),
     is_deleted BOOLEAN DEFAULT false,
-    session_id VARCHAR(256)
+    is_admin BOOLEAN DEFAULT false, -- key is referenced for user management from admin
+    session_id char(256)
 );
