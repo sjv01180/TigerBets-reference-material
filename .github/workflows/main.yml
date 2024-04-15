@@ -58,3 +58,8 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: SWEN-732-G3/TigerBets
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env: 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
