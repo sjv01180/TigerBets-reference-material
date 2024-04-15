@@ -1,6 +1,6 @@
 # Tiger Bets
 
-[![codecov](https://codecov.io/gh/SWEN-732-G3/TigerBets/graph/badge.svg?token=MGD5UEG2OE)](https://codecov.io/gh/SWEN-732-G3/TigerBets) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![codecov](https://codecov.io/gh/SWEN-732-G3/TigerBets/graph/badge.svg?token=MGD5UEG2OE)](https://codecov.io/gh/SWEN-732-G3/TigerBets) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SWEN-732-G3_TigerBets&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=SWEN-732-G3_TigerBets)
 
 TigerBets is an online betting platform designed to provide users with an interactive experience in predicting outcomes across various college sporting events. Our MVP will offer a range of features to cater to both administrators and users, ensuring smooth operation and engaging gameplay. In addition, the platform will provide basic user analytics, a system-wide leaderboard, and persistant data storage to ensure a robust user experience and a friendly competitive environment.
 
