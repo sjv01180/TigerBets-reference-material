@@ -2,7 +2,7 @@ from flask import request
 from flask_restful import Resource
 from flask.json import jsonify
 
-from db.tiger_bets.points import *
+from db.tiger_bets.points import update_points,get_points_for_user,get_users_with_top_points
 
 class Point(Resource):
     def put(self):

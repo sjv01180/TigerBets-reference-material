@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -9,6 +10,8 @@ import PersonIcon from '@mui/icons-material/Person';
 
 export default function DrawerList(props) {
     const { setTab } = props;
+    
+
     return (
         <List>
             <ListItem disablePadding>
@@ -38,3 +41,7 @@ export default function DrawerList(props) {
         </List>
     );
 }
+
+DrawerList.propTypes = {
+    setTab: PropTypes.func.isRequired
+};

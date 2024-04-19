@@ -33,7 +33,6 @@ export default function Login() {
             </div>
             <div className="tabContainer">
                 <div className="title">Tiger Bets</div>
-                <React.Fragment>
                 <Tabs value={currentTabIndex} onChange={handleTabChange} centered>
                     <Tab label='Login' style={{color: "#465098"}}/>
                     <Tab label='Register' style={{color: "#465098"}}/>
@@ -50,16 +49,16 @@ export default function Login() {
                 {/* TAB 2 Contents */}
                 {currentTabIndex === 1 && (
                     <div className="tab">
-                    <TextField label="Name" variant="outlined" size="small" fullWidth margin="normal" required/>
-                    <TextField label="Email" variant="outlined" size="small" fullWidth margin="normal" required/>
-                    <TextField label="Phone" variant="outlined" size="small" fullWidth margin="normal" required/>
-                    <TextField label="Password" variant="outlined" size="small" fullWidth margin="normal" required type="password"/>
-                    <Button style={{backgroundColor: "#F08000", marginTop: "1rem"}} variant="contained" margin="normal" fullWidth onClick={handleRegisterOnClick}>REGISTER</Button>
-                    <div className="tabFooter">Already have have an account? Login</div>
-                </div>
+                        <TextField label="Name" variant="outlined" size="small" fullWidth margin="normal" required/>
+                        <TextField label="Email" variant="outlined" size="small" fullWidth margin="normal" required/>
+                        <TextField label="Phone" variant="outlined" size="small" fullWidth margin="normal" required/>
+                        <TextField label="Password" variant="outlined" size="small" fullWidth margin="normal" required type="password"/>
+                        <Button style={{backgroundColor: "#F08000", marginTop: "1rem"}} variant="contained" margin="normal" fullWidth onClick={handleRegisterOnClick}>REGISTER</Button>
+                        <div className="tabFooter">Already have an account? Login</div>
+                    </div>
                 )}
-                </React.Fragment>
             </div>
+
         </div>
     );
     }

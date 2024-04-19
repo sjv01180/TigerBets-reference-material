@@ -1,7 +1,7 @@
 from flask import request
 from flask_restful import Resource
 from flask.json import jsonify
-from db.tiger_bets.events import *
+from db.tiger_bets.events import assign_random_event_results,list_events_with_team_names,create_event,get_event_details,edit_event,delete_event
 
 class Events(Resource):
     # Lists events with results and team names

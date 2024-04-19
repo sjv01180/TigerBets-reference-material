@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse, request
 
-from db.db_utils import *
-from db.tiger_bets.events import *
+from db.db_utils import exec_get_one
+from db.tiger_bets.events import rebuild_event_tables
 from db.tiger_bets.bets import rebuild_bet_tables
 
 class Init(Resource):

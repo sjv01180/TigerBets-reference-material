@@ -2,9 +2,7 @@ from flask import request
 from flask_restful import Resource
 from flask.json import jsonify
 
-from db.tiger_bets.bets import *
-import json
-
+from db.tiger_bets.bets import list_user_bets,create_bet,get_bet_details,edit_bet,delete_bet
 
 class Bets(Resource):
     def get(self):

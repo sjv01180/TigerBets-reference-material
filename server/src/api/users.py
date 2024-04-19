@@ -1,5 +1,5 @@
 from flask_restful import Resource, request, reqparse
-from db.tiger_bets.users import *
+from db.tiger_bets.users import clear_users,get_user,delete_user,delete_user_admin,create_user,create_user_admin,update_user,update_user_admin,update_user_session_id,validate_user,invalidate_user,User,get_users_by_query
 
 
 class Users(Resource):
