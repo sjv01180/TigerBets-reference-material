@@ -1,7 +1,7 @@
 import json
 import unittest
-from unittest.mock import patch, MagicMock
-from tests.test_utils import *
+from unittest.mock import patch
+from tests.test_utils import post_rest_call
 
 
 class TestUser(unittest.TestCase):

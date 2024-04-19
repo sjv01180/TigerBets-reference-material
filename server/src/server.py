@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
-from api.management import *
-from api.users import *
-from api.events import *
-from api.bets import *
-from api.points import *
+from api.management import Init, Version
+from api.users import Users, Admin
+from api.events import Events, SingleEvent
+from api.bets import Bets, Bet
+from api.points import Points, Point
 
 app = Flask(__name__)
 CORS(app)

@@ -1,7 +1,5 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from src.db.db_utils import exec_sql_file
-from tests.test_utils import *
 
 
 class TestEventManagement(unittest.TestCase):

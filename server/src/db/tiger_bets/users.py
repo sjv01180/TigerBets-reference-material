@@ -148,7 +148,7 @@ def invalidate_user(session: str) -> bool:
         return False
     return _cancel_session_by_uid(cur_user.uid)
 
-def get_user(username: str, session: str) -> User:
+def get_user(username: str, session: str) -> User | None:
     """
     Finds user by username. Public rendition of _get_user_by_username
     :param username:
@@ -156,7 +156,7 @@ def get_user(username: str, session: str) -> User:
     :return: user
     """
     cur_user = _get_user_by_session(session)
-    if (cur_user is None):
+    if cur_user is None:
         return None
     return _get_user_by_username(username)
 
@@ -164,7 +164,6 @@ def update_user_session_id(username: str) -> str:
     """
     update user session_id
     """
-    cur_user = _get_user_by_username(username)
     session_id = secrets.token_hex(128)
     update_sql = "UPDATE users SET session_id = %s WHERE user_name = %s"
     exec_commit(update_sql, (session_id, username))
@@ -219,7 +218,7 @@ def create_user_admin(user: User, password: str) -> bool:
     exec_commit(insert_sql, (user.username, user.full_name, user.email, hashed_pass,))
     return True
 
-def get_users_by_query(query: str, session: str) -> list[User]:
+def get_users_by_query(query: str, session: str) -> list[User] | None:
     """
     grabs a list of users based on a query. If no search query was specified, grab all users in the system
     must be an admin in order to invoke this function 
