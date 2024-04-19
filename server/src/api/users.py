@@ -1,6 +1,6 @@
 from flask_restful import Resource, request, reqparse
 from db.tiger_bets.users import clear_users,get_user,delete_user,delete_user_admin,create_user,create_user_admin,update_user,update_user_admin,update_user_session_id,validate_user,invalidate_user,User,get_users_by_query
-
+from constants import BAD_REQUEST_ERROR, HELP
 
 class Users(Resource):
     """
@@ -27,15 +27,15 @@ class Users(Resource):
         elif action == 'find_user':  # I know this is bad practice, but it's 3 AM
             return self.find_user()    
         else:
-            return {"error": "Bad Request"}, 400
+            return BAD_REQUEST_ERROR, 400
 
     def login(self):
         """
         user login function
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('password', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('password', help=HELP, required=True)
 
         data = parser.parse_args()
 
@@ -51,10 +51,10 @@ class Users(Resource):
         register user action
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('fullname', help='This field cannot be blank', required=True)
-        parser.add_argument('email', help='This field cannot be blank', required=True)
-        parser.add_argument('password', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('fullname', help=HELP, required=True)
+        parser.add_argument('email', help=HELP, required=True)
+        parser.add_argument('password', help=HELP, required=True)
         data = parser.parse_args()
 
         try:
@@ -73,7 +73,7 @@ class Users(Resource):
         user logoff function
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('session', help='This field cannot be blank', required=True)
+        parser.add_argument('session', help=HELP, required=True)
         data = parser.parse_args()
 
         if not invalidate_user(data['session']):
@@ -85,8 +85,8 @@ class Users(Resource):
         handle post requests
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('session', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('session', help=HELP, required=True)
         data = parser.parse_args()
 
         user = get_user(data['username'], data['session'])
@@ -103,17 +103,17 @@ class Users(Resource):
         elif action == 'deactivate':
             return self.deactivate()  
         else:
-            return {"error": "Bad Request"}, 400
+            return BAD_REQUEST_ERROR, 400
 
     def update(self):
         """
         put request to change account information
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('newuser', help='This field cannot be blank', required=True)
-        parser.add_argument('newname', help='This field cannot be blank', required=True)
-        parser.add_argument('newemail', help='This field cannot be blank', required=True)
-        parser.add_argument('session', help='This field cannot be blank', required=True)
+        parser.add_argument('newuser', help=HELP, required=True)
+        parser.add_argument('newname', help=HELP, required=True)
+        parser.add_argument('newemail', help=HELP, required=True)
+        parser.add_argument('session', help=HELP, required=True)
         data = parser.parse_args()
 
         if not update_user(data['newuser'], data['newname'], data['newemail'], data['session']):
@@ -126,8 +126,8 @@ class Users(Resource):
         put request to deactivate account
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('session', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('session', help=HELP, required=True)
         data = parser.parse_args()
 
         if not delete_user(data['session']):
@@ -151,15 +151,15 @@ class Admin(Resource):
         elif action == 'register':
             return self.reg_admin()    
         else:
-            return {"error": "Bad Request"}, 400
+            return BAD_REQUEST_ERROR, 400
     
     def find_users(self):
         """
         find users function
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('session', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('session', help=HELP, required=True)
 
         data = parser.parse_args()
         user_list = get_users_by_query(data['username'], data['session'])
@@ -172,10 +172,10 @@ class Admin(Resource):
         register admin account (TEST ONLY. MY INITIAL PLAN WAS TO INTERNALLY CREATE THESE ACCOUNTS IN ADVANCE)
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('fullname', help='This field cannot be blank', required=True)
-        parser.add_argument('email', help='This field cannot be blank', required=True)
-        parser.add_argument('password', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('fullname', help=HELP, required=True)
+        parser.add_argument('email', help=HELP, required=True)
+        parser.add_argument('password', help=HELP, required=True)
         data = parser.parse_args()
 
         try:
@@ -198,18 +198,18 @@ class Admin(Resource):
         elif action == 'deactivate':
             return self.deactivate()  
         else:
-            return {"error": "Bad Request"}, 400
+            return BAD_REQUEST_ERROR, 400
 
     def update(self):
         """
         put request to change specified account information
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('newuser', help='This field cannot be blank', required=True)
-        parser.add_argument('newname', help='This field cannot be blank', required=True)
-        parser.add_argument('newemail', help='This field cannot be blank', required=True)
-        parser.add_argument('session', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('newuser', help=HELP, required=True)
+        parser.add_argument('newname', help=HELP, required=True)
+        parser.add_argument('newemail', help=HELP, required=True)
+        parser.add_argument('session', help=HELP, required=True)
         data = parser.parse_args()
 
         if not update_user_admin(data['username'], data['newuser'], data['newname'], data['newemail'], data['session']):
@@ -222,8 +222,8 @@ class Admin(Resource):
         put request to deactivate specified account
         """
         parser = reqparse.RequestParser()
-        parser.add_argument('username', help='This field cannot be blank', required=True)
-        parser.add_argument('session', help='This field cannot be blank', required=True)
+        parser.add_argument('username', help=HELP, required=True)
+        parser.add_argument('session', help=HELP, required=True)
         data = parser.parse_args()
 
         if not delete_user_admin(data['username'], data['session']):
