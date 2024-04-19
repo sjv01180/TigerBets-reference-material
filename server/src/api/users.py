@@ -10,7 +10,7 @@ class Users(Resource):
         """
         handle get requests
         """
-        return
+        pass
 
     def post(self, action):
         """

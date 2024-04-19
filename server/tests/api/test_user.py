@@ -5,9 +5,6 @@ from tests.test_utils import post_rest_call
 
 
 class TestUser(unittest.TestCase):
-    def clear_data(self):
-        url = "http://localhost:8080/users/clear"
-        post_rest_call(self, url)
 
     def setUp(self):
         """
@@ -43,7 +40,7 @@ class TestUser(unittest.TestCase):
         ]
 
         # Mocking invalid input value
-        result = self.mock_post_rest_call(url, params=input_valueerror)
+        self.mock_post_rest_call(url, params=input_valueerror)
 
         # Mocking valid user registration
         result = self.mock_post_rest_call(url, params=input_valid)
@@ -52,7 +49,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(result["user"]["email"], output_user["email"])
 
         # Mocking invalid duplicate registration
-        result = self.mock_post_rest_call(url, params=input_valid)
+        self.mock_post_rest_call(url, params=input_valid)
 
     def test_login(self):
         """

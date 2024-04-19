@@ -42,7 +42,7 @@ class TestPoints(unittest.TestCase):
         """
         self.mock_get_rest_call.return_value = [{"user_id": "1", "points": 9}, {"user_id": "2", "points": 150}]
         result = self.mock_get_rest_call("http://localhost:8080/points")
-        self.assertTrue(len(result) > 0, "More than 1 user")
+        self.assertGreater(len(result), 0, "More than 1 user")
 
 if __name__ == '__main__':
     unittest.main()

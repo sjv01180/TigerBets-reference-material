@@ -24,7 +24,7 @@ class TestEventManagement(unittest.TestCase):
         """
         self.mock_get_rest_call.return_value = [{"event_id": "1"}, {"event_id": "2"}]
         result = self.mock_get_rest_call("http://localhost:8080/events")
-        self.assertTrue(len(result) > 0)
+        self.assertGreater(len(result), 0)
 
     def test_event_creation(self):
         """

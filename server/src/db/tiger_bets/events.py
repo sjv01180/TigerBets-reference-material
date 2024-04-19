@@ -1,4 +1,4 @@
-from ..db_utils import *
+from ..db_utils import exec_get_all, exec_sql_file, exec_commit, exec_get_one
 import random
 from dataclasses import dataclass
 
@@ -8,7 +8,7 @@ class Event:
     event_name: str
     team_a_id: str
     team_b_id: str
-    event_result: str = None
+    event_result: str
 
 def rebuild_event_tables():
     exec_sql_file("src/db/sql/events.sql")
