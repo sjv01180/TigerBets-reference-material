@@ -140,7 +140,7 @@ class Admin(Resource):
         """
         handle get requests
         """
-        return
+        pass
     
     def post(self, action):
         """
