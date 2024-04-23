@@ -1,12 +1,12 @@
 import React from "react";
 import './index.css'
-import EventList from '../EventList'
+import LeaderBoard from '../LeaderBoardChart'
 
-export default function DashboardTab(props) {
+export default function LeaderBoardTab(props) {
     return (
         <div className="dashTabContainer">
             <div className="listContainer">
-                <div className="list1"><EventList /></div>
+                <LeaderBoard />
             </div>
         </div>
     );

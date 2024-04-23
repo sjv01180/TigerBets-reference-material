@@ -6,11 +6,13 @@ import Toolbar from '@mui/material/Toolbar';
 import Divider from '@mui/material/Divider';
 import DrawerList from '../../components/DrawerList'
 import DashboardTab from '../../components/DashboardTab'
+import LeaderBoardTab from '../../components/LeaderBoard'
 import ProfileTab from '../../components/ProfileTab'
 import Button from '@mui/material/Button';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { DRAWER_WIDTH } from '../../constants'
 import "./index.css"
+import CurrentBetTab from "../../components/CurrentBetTab";
 
 export default function Dashboard() {
     const [tab, setTab] = useState(0);
@@ -19,13 +21,14 @@ export default function Dashboard() {
             <Box sx={{ display: 'flex' }}>
                 <AppBar position="fixed" sx={{ width: `calc(100% - ${DRAWER_WIDTH}px)`, ml: `${DRAWER_WIDTH}px` }}>
                     { tab === 0? 
-                    <Toolbar style={{backgroundColor: "#F08000", display: 'flex', justifyContent: 'space-between'}}>
+                    <Toolbar style={{backgroundColor: "#F76900", display: 'flex', justifyContent: 'space-between'}}>
                         <div className="toolBarTitle">Your TigerBets Dashboard</div>
                         <div style={{width: '40%', display: 'flex', justifyContent: 'flex-end'}}>
+                            <Button style={{backgroundColor: 'whitesmoke', color: '#d4601d', fontSize: 'x-small', width: '35%', fontWeight: 'bold', marginRight: '1rem'}} startIcon={<LogoutIcon/>}> Logout</Button>
                         </div>
                     </Toolbar>
                     :
-                    <Toolbar style={{backgroundColor: "#F08000", display: 'flex', justifyContent: 'space-between'}}>
+                    <Toolbar style={{backgroundColor: "#F76900", display: 'flex', justifyContent: 'space-between'}}>
                         <div className="toolBarTitle">Your TigerBets Profile</div>
                         <div style={{width: '40%', display: 'flex', justifyContent: 'flex-end'}}>
                             <Button style={{backgroundColor: 'whitesmoke', color: '#d4601d', fontSize: 'x-small', width: '35%', fontWeight: 'bold', marginRight: '1rem'}} startIcon={<LogoutIcon/>}> Logout</Button>
@@ -38,15 +41,10 @@ export default function Dashboard() {
                     <Divider />
                     <DrawerList setTab={setTab}/>
                 </Drawer>
-                { tab === 0 ?
-                <div className="mainContainer">
-                    <DashboardTab />
-                </div>
-                :
-                <div className="mainContainer">
-                    <ProfileTab/>
-                </div>
-                }
+                {tab === 0 && <DashboardTab/>}
+                  {tab === 3 && <ProfileTab/>}
+                  {tab === 1 && <CurrentBetTab/>}
+                  {tab === 2 && <LeaderBoardTab/>}
             </Box>
     );
 }
